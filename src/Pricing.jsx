@@ -341,9 +341,15 @@ export default function Pricing() {
                     ))}
                   </div>
 
-                  <button className={`pricing-btn ${plan.popular ? 'btn-solid' : 'btn-outline'}`}>
+                  <a 
+                    href="https://calendly.com/zouse/new-meeting"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`pricing-btn ${plan.popular ? 'btn-solid' : 'btn-outline'}`}
+                    style={{ textDecoration: 'none', display: 'block', boxSizing: 'border-box' }}
+                  >
                     {plan.buttonText}
-                  </button>
+                  </a>
                 </motion.div>
               )
             })}
