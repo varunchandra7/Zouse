@@ -101,8 +101,9 @@ function Navigation() {
         <div className="desktop-nav">
           <a
             id="nav-book-call"
-            href="#contact"
-            onClick={(e) => { e.preventDefault(); smoothScrollTo('contact', -64) }}
+            href="https://calendly.com/zouse/new-meeting"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -219,12 +220,10 @@ function Navigation() {
                 </a>
               ))}
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault()
-                  setMobileOpen(false)
-                  smoothScrollTo('contact', -64)
-                }}
+                href="https://calendly.com/zouse/new-meeting"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
                 style={{
                   display: 'inline-block',
                   marginTop: 8,
@@ -768,8 +767,9 @@ export default function Hero() {
             >
               <a
                 id="hero-book-call"
-                href="#contact"
-                onClick={(e) => { e.preventDefault(); smoothScrollTo('contact', -64) }}
+                href="https://calendly.com/zouse/new-meeting"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-primary"
               >
                 Book Free Strategy Call
