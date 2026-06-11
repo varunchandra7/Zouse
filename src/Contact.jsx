@@ -16,24 +16,6 @@ export default function Contact() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } }
   };
 
-  const diagramVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15, delayChildren: 0.2 }
-    }
-  };
-
-  const lineVariants = {
-    hidden: { pathLength: 0, opacity: 0 },
-    visible: { pathLength: 1, opacity: 1, transition: { duration: 1.2, ease: "easeInOut" } }
-  };
-
-  const nodeVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: { opacity: 1, scale: 1, transition: { type: "spring", stiffness: 100, damping: 20 } }
-  };
-
   const CheckIcon = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
       <path d="M20 6L9 17L4 12" stroke="#111111" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -45,22 +27,26 @@ export default function Contact() {
       <style>{`
         .contact-section {
           background: #ffffff;
-          padding: 180px 24px 160px;
+          padding: 200px 24px 200px;
           position: relative;
           color: #111111;
         }
 
         .contact-container {
-          max-width: 1200px;
+          max-width: 1280px;
           margin: 0 auto;
         }
 
-        .editorial-header {
+        .contact-grid {
           display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 80px;
-          align-items: start;
-          margin-bottom: 80px;
+          grid-template-columns: 1fr 1.1fr;
+          gap: 120px;
+          align-items: center;
+        }
+
+        .contact-left {
+          display: flex;
+          flex-direction: column;
         }
 
         .editorial-label {
@@ -84,12 +70,13 @@ export default function Contact() {
         }
 
         .editorial-headline {
-          font-size: clamp(3rem, 5vw, 4.5rem);
+          font-size: clamp(3.5rem, 5.5vw, 5rem);
           font-weight: 800;
           color: #111111;
           font-family: 'Inter', sans-serif;
           letter-spacing: -0.04em;
           line-height: 1.05;
+          margin-bottom: 40px;
         }
 
         .editorial-subtext {
@@ -97,7 +84,8 @@ export default function Contact() {
           line-height: 1.6;
           color: #666666;
           font-family: 'Inter', sans-serif;
-          padding-top: 12px;
+          margin-bottom: 60px;
+          max-width: 540px;
         }
 
         .editorial-subtext strong {
@@ -105,61 +93,36 @@ export default function Contact() {
           font-weight: 600;
         }
 
-        .diagram-container {
-          width: 100%;
-          background: #FAFAFA;
-          border-radius: 32px;
-          padding: 80px 24px;
-          margin-bottom: 120px;
-          display: flex;
-          justify-content: center;
-          overflow: hidden;
-          border: 1px solid #EEEEEE;
-        }
-
-        .audit-cta-grid {
-          display: grid;
-          grid-template-columns: 1fr 1.1fr;
-          gap: 100px;
-          align-items: center;
-        }
-
         .audit-section h3 {
-          font-size: 24px;
+          font-size: 22px;
           font-weight: 700;
           color: #111111;
-          margin-bottom: 40px;
+          margin-bottom: 32px;
           font-family: 'Inter', sans-serif;
           line-height: 1.4;
         }
 
         .audit-list {
-          display: flex;
-          flex-direction: column;
-          gap: 0;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 24px;
         }
 
         .audit-item {
           display: flex;
           align-items: center;
-          gap: 16px;
-          font-size: 18px;
+          gap: 12px;
+          font-size: 16px;
           font-weight: 600;
           color: #111111;
           font-family: 'Inter', sans-serif;
-          padding: 24px 0;
-          border-bottom: 1px solid #EEEEEE;
-        }
-
-        .audit-item:last-child {
-          border-bottom: none;
         }
 
         .cta-card {
           background: #ffffff;
           border: 1px solid #E5E5E5;
-          border-radius: 24px;
-          padding: 56px;
+          border-radius: 32px;
+          padding: 64px;
           box-shadow: 0 40px 100px rgba(0, 0, 0, 0.08);
           position: relative;
           transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -167,7 +130,7 @@ export default function Contact() {
 
         .cta-card:hover {
           transform: translateY(-8px);
-          box-shadow: 0 50px 120px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 60px 140px rgba(0, 0, 0, 0.12);
         }
 
         .cta-card::before {
@@ -176,50 +139,52 @@ export default function Contact() {
           top: 0;
           left: 0;
           right: 0;
-          height: 6px;
+          height: 8px;
           background: #111111;
-          border-top-left-radius: 24px;
-          border-top-right-radius: 24px;
+          border-top-left-radius: 32px;
+          border-top-right-radius: 32px;
         }
 
         .cta-card-title {
-          font-size: 32px;
+          font-size: 36px;
           font-weight: 800;
           color: #111111;
           font-family: 'Inter', sans-serif;
           letter-spacing: -0.03em;
-          margin-bottom: 16px;
-          line-height: 1.2;
+          margin-bottom: 20px;
+          line-height: 1.15;
         }
 
         .cta-card-desc {
-          font-size: 16px;
+          font-size: 18px;
           line-height: 1.6;
           color: #666666;
           font-family: 'Inter', sans-serif;
-          margin-bottom: 40px;
+          margin-bottom: 48px;
         }
 
         .cta-includes {
           display: grid;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 1fr;
           gap: 20px;
-          margin-bottom: 48px;
+          margin-bottom: 56px;
+          padding-top: 40px;
+          border-top: 1px solid #EEEEEE;
         }
 
         .cta-include-item {
           display: flex;
           align-items: center;
-          gap: 12px;
-          font-size: 15px;
+          gap: 16px;
+          font-size: 16px;
           color: #444444;
           font-weight: 500;
           font-family: 'Inter', sans-serif;
         }
         
         .cta-include-item .dot {
-          width: 6px;
-          height: 6px;
+          width: 8px;
+          height: 8px;
           background: #111111;
           border-radius: 50%;
         }
@@ -229,11 +194,11 @@ export default function Contact() {
           padding: 24px;
           background: #111111;
           color: #ffffff;
-          font-size: 16px;
+          font-size: 18px;
           font-weight: 600;
           font-family: 'Inter', sans-serif;
           border: none;
-          border-radius: 12px;
+          border-radius: 16px;
           cursor: pointer;
           transition: all 0.3s ease;
           display: flex;
@@ -253,7 +218,7 @@ export default function Contact() {
           align-items: center;
           justify-content: center;
           flex-wrap: wrap;
-          gap: 24px;
+          gap: 32px;
           margin-top: 32px;
         }
 
@@ -267,32 +232,45 @@ export default function Contact() {
           font-family: 'Inter', sans-serif;
         }
 
-        @media (max-width: 1024px) {
-          .editorial-header {
-            grid-template-columns: 1fr;
-            gap: 40px;
-            margin-bottom: 60px;
+        @media (max-width: 1200px) {
+          .contact-grid {
+            gap: 60px;
           }
-          .audit-cta-grid {
+          .cta-card {
+            padding: 48px;
+          }
+        }
+
+        @media (max-width: 1024px) {
+          .contact-grid {
             grid-template-columns: 1fr;
-            gap: 64px;
+            gap: 80px;
+          }
+          .editorial-headline {
+            max-width: 700px;
+          }
+          .cta-card {
+            max-width: 700px;
+          }
+          .cta-includes {
+            grid-template-columns: 1fr 1fr;
           }
         }
 
         @media (max-width: 640px) {
           .contact-section {
-            padding: 100px 20px;
+            padding: 120px 20px;
           }
           .editorial-headline {
             font-size: 2.8rem;
           }
-          .diagram-container {
-            padding: 40px 0;
-            margin-bottom: 80px;
-            border-radius: 24px;
-          }
           .cta-card {
             padding: 40px 24px;
+            border-radius: 24px;
+          }
+          .cta-card::before {
+            border-top-left-radius: 24px;
+            border-top-right-radius: 24px;
           }
           .cta-includes {
             grid-template-columns: 1fr;
@@ -301,6 +279,9 @@ export default function Contact() {
             flex-direction: column;
             gap: 16px;
           }
+          .audit-list {
+            grid-template-columns: 1fr;
+          }
         }
       `}</style>
 
@@ -308,126 +289,53 @@ export default function Contact() {
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 1, background: '#EEEEEE' }} />
 
         <div className="contact-container">
-          
-          {/* Editorial Header */}
           <motion.div 
-            className="editorial-header"
+            className="contact-grid"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-10%" }}
           >
-            <div>
+            {/* Left Side: Copy & Audit */}
+            <div className="contact-left">
               <motion.div className="editorial-label" variants={itemVariants}>
                 FINAL STEP
               </motion.div>
+              
               <motion.h2 className="editorial-headline" variants={itemVariants}>
                 What If The Problem<br />Isn't Your Traffic?
               </motion.h2>
-            </div>
-            
-            <motion.div variants={itemVariants}>
-              <p className="editorial-subtext">
-                Most businesses think they need:<br />
+              
+              <motion.p className="editorial-subtext" variants={itemVariants}>
+                Most businesses think they need: <br />
                 <strong>More Ads. More Followers. More Traffic.</strong>
                 <br /><br />
                 Usually they don't.<br />
                 <strong>They need a landing page that converts.</strong>
                 <br /><br />
                 Before spending more money on marketing, let's identify what's stopping your visitors from becoming customers.
-              </p>
-            </motion.div>
-          </motion.div>
+              </motion.p>
 
-          {/* Animated Diagram */}
-          <div className="diagram-container">
-            <motion.svg 
-              width="100%" 
-              height="auto" 
-              viewBox="0 0 800 560" 
-              initial="hidden" 
-              whileInView="visible" 
-              viewport={{ once: true, margin: "-10%" }} 
-              variants={diagramVariants} 
-              style={{ maxWidth: '800px', width: '100%', display: 'block', margin: '0 auto' }}
-            >
-              {/* Paths */}
-              <motion.path d="M 270 80 L 270 120" stroke="#E5E5E5" strokeWidth="2" variants={lineVariants} fill="none" />
-              <motion.path d="M 270 180 L 270 480" stroke="#E5E5E5" strokeWidth="2" variants={lineVariants} fill="none" />
-              
-              <motion.path d="M 270 230 L 460 230" stroke="#E5E5E5" strokeWidth="2" strokeDasharray="6 6" variants={lineVariants} fill="none" />
-              <motion.path d="M 270 310 L 460 310" stroke="#E5E5E5" strokeWidth="2" strokeDasharray="6 6" variants={lineVariants} fill="none" />
-              <motion.path d="M 270 390 L 460 390" stroke="#E5E5E5" strokeWidth="2" strokeDasharray="6 6" variants={lineVariants} fill="none" />
-
-              {/* Nodes */}
-              <motion.g variants={nodeVariants}>
-                <rect x="160" y="20" width="220" height="60" rx="30" fill="#ffffff" stroke="#E5E5E5" strokeWidth="1" />
-                <text x="270" y="56" textAnchor="middle" fill="#111111" fontSize="16" fontWeight="600" fontFamily="Inter">Visitors</text>
-              </motion.g>
-
-              <motion.g variants={nodeVariants}>
-                <rect x="160" y="120" width="220" height="60" rx="30" fill="#111111" />
-                <text x="270" y="156" textAnchor="middle" fill="#ffffff" fontSize="16" fontWeight="600" fontFamily="Inter">Landing Page</text>
-              </motion.g>
-
-              <motion.g variants={nodeVariants}>
-                <rect x="460" y="200" width="180" height="60" rx="30" fill="#ffffff" stroke="#EEEEEE" strokeWidth="1" />
-                <text x="550" y="236" textAnchor="middle" fill="#666666" fontSize="15" fontWeight="500" fontFamily="Inter">Drop Off ❌</text>
-              </motion.g>
-
-              <motion.g variants={nodeVariants}>
-                <rect x="460" y="280" width="180" height="60" rx="30" fill="#ffffff" stroke="#EEEEEE" strokeWidth="1" />
-                <text x="550" y="316" textAnchor="middle" fill="#666666" fontSize="15" fontWeight="500" fontFamily="Inter">Drop Off ❌</text>
-              </motion.g>
-
-              <motion.g variants={nodeVariants}>
-                <rect x="460" y="360" width="180" height="60" rx="30" fill="#ffffff" stroke="#EEEEEE" strokeWidth="1" />
-                <text x="550" y="396" textAnchor="middle" fill="#666666" fontSize="15" fontWeight="500" fontFamily="Inter">Drop Off ❌</text>
-              </motion.g>
-
-              <motion.g variants={nodeVariants}>
-                <rect x="160" y="480" width="220" height="60" rx="30" fill="#111111" />
-                <text x="270" y="516" textAnchor="middle" fill="#ffffff" fontSize="16" fontWeight="600" fontFamily="Inter">Customer ✅</text>
-              </motion.g>
-              
-              {/* Junction dots */}
-              <motion.circle cx="270" cy="230" r="4" fill="#111111" variants={nodeVariants} />
-              <motion.circle cx="270" cy="310" r="4" fill="#111111" variants={nodeVariants} />
-              <motion.circle cx="270" cy="390" r="4" fill="#111111" variants={nodeVariants} />
-
-            </motion.svg>
-          </div>
-
-          {/* Audit & CTA Section */}
-          <motion.div 
-            className="audit-cta-grid"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
-          >
-            {/* Left: Audit Section */}
-            <div className="audit-section">
-              <motion.h3 variants={itemVariants}>
-                In a free 15-minute strategy session we'll identify:
-              </motion.h3>
-              
-              <div className="audit-list">
-                {[
-                  'Conversion bottlenecks',
-                  'Messaging mistakes',
-                  'UX friction',
-                  'Revenue leaks'
-                ].map((item, i) => (
-                  <motion.div key={i} className="audit-item" variants={itemVariants}>
-                    <CheckIcon />
-                    {item}
-                  </motion.div>
-                ))}
-              </div>
+              <motion.div className="audit-section" variants={itemVariants}>
+                <h3>In a free 15-minute strategy session we'll identify:</h3>
+                
+                <div className="audit-list">
+                  {[
+                    'Conversion bottlenecks',
+                    'Messaging mistakes',
+                    'UX friction',
+                    'Revenue leaks'
+                  ].map((item, i) => (
+                    <div key={i} className="audit-item">
+                      <CheckIcon />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
             </div>
 
-            {/* Right: CTA Card */}
+            {/* Right Side: CTA Card */}
             <motion.div variants={itemVariants}>
               <div className="cta-card">
                 <h4 className="cta-card-title">Free Website & Conversion Audit</h4>
@@ -456,7 +364,6 @@ export default function Contact() {
                   Find Out What's Costing You Customers
                 </a>
 
-                {/* Trust Elements */}
                 <div className="trust-elements">
                   {[
                     'No obligations',
