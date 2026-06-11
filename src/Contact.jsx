@@ -322,9 +322,15 @@ export default function Contact() {
                   <textarea className="form-input form-textarea" placeholder="Tell us about your goals..."></textarea>
                 </div>
 
-                <button type="submit" className="submit-btn">
+                <a 
+                  href="https://calendly.com/zouse/new-meeting" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="submit-btn" 
+                  style={{ display: 'block', textAlign: 'center', textDecoration: 'none' }}
+                >
                   Book Free Strategy Call
-                </button>
+                </a>
               </form>
 
               <div className="contact-info-row">
@@ -371,27 +377,29 @@ export default function Contact() {
           }}>
             Let's create a landing page that helps your business grow.
           </p>
-          <button style={{
-            padding: '18px 32px',
-            background: '#111111',
-            color: '#ffffff',
-            fontSize: 16,
-            fontWeight: 600,
-            fontFamily: 'Inter, sans-serif',
-            border: 'none',
-            borderRadius: 12,
-            cursor: 'pointer',
-            transition: 'transform 0.2s ease, background 0.2s ease',
-          }}
-          onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.background = '#222222' }}
-          onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.background = '#111111' }}
-          onClick={() => {
-            const input = document.querySelector('.form-input');
-            if (input) input.focus();
-          }}
+          <a 
+            href="https://calendly.com/zouse/new-meeting"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-block',
+              padding: '18px 32px',
+              background: '#111111',
+              color: '#ffffff',
+              fontSize: 16,
+              fontWeight: 600,
+              fontFamily: 'Inter, sans-serif',
+              textDecoration: 'none',
+              border: 'none',
+              borderRadius: 12,
+              cursor: 'pointer',
+              transition: 'transform 0.2s ease, background 0.2s ease',
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.background = '#222222' }}
+            onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.background = '#111111' }}
           >
             Book Free Strategy Call
-          </button>
+          </a>
         </motion.div>
 
       </section>
