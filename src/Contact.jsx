@@ -6,16 +6,8 @@ export default function Contact() {
       <style>{`
         .contact-section {
           background: #ffffff;
-          padding: 80px 24px 80px;
+          padding: 120px 24px 120px;
           position: relative;
-        }
-
-        .contact-header {
-          text-align: center;
-          margin-bottom: 60px;
-          max-width: 720px;
-          margin-left: auto;
-          margin-right: auto;
         }
 
         .contact-grid {
@@ -24,7 +16,7 @@ export default function Contact() {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 80px;
-          align-items: start;
+          align-items: center;
         }
 
         .contact-left {
@@ -34,7 +26,7 @@ export default function Contact() {
         }
 
         .contact-left h3 {
-          font-size: 32px;
+          font-size: clamp(2.5rem, 4vw, 3.5rem);
           font-weight: 800;
           color: #111111;
           fontFamily: 'Inter', sans-serif;
@@ -43,145 +35,137 @@ export default function Contact() {
         }
 
         .contact-left p {
-          font-size: 16px;
+          font-size: 18px;
           line-height: 1.65;
           color: #666666;
           fontFamily: 'Inter', sans-serif;
-          max-width: 480px;
+          max-width: 540px;
         }
 
         .trust-points {
           display: flex;
           flex-direction: column;
           gap: 16px;
-          margin-top: 16px;
+          margin-top: 8px;
         }
 
         .trust-point {
           display: flex;
           align-items: center;
           gap: 12px;
-          font-size: 15px;
-          font-weight: 500;
-          color: #111111;
-          fontFamily: 'Inter', sans-serif;
-        }
-
-        .contact-form-wrapper {
-          background: #ffffff;
-          border: 1px solid #EEEEEE;
-          border-radius: 24px;
-          padding: 48px;
-          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
-        }
-
-        .contact-form {
-          display: flex;
-          flex-direction: column;
-          gap: 24px;
-        }
-
-        .form-group {
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-        }
-
-        .form-label {
-          font-size: 13px;
+          font-size: 16px;
           font-weight: 600;
           color: #111111;
           fontFamily: 'Inter', sans-serif;
         }
 
-        .form-input {
-          width: 100%;
-          padding: 16px;
-          background: #FAFAFA;
-          border: 1px solid #E5E5E5;
-          border-radius: 12px;
-          font-size: 15px;
-          fontFamily: 'Inter', sans-serif;
-          color: #111111;
-          transition: all 0.2s ease;
-        }
-
-        .form-input::placeholder {
-          color: #AAAAAA;
-        }
-
-        .form-input:focus {
-          outline: none;
+        .booking-card-wrapper {
           background: #ffffff;
-          border-color: #111111;
-          box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.05);
+          border: 1px solid #EEEEEE;
+          border-radius: 32px;
+          padding: 56px 48px;
+          box-shadow: 0 24px 80px rgba(0, 0, 0, 0.06);
+          position: relative;
+          overflow: hidden;
         }
 
-        .form-textarea {
-          resize: vertical;
-          min-height: 120px;
+        .booking-card-wrapper::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 6px;
+          background: #111111;
+        }
+
+        .booking-card-title {
+          font-size: 28px;
+          font-weight: 800;
+          color: #111111;
+          fontFamily: 'Inter', sans-serif;
+          letter-spacing: -0.03em;
+          margin-bottom: 12px;
+          line-height: 1.2;
+        }
+
+        .booking-card-desc {
+          font-size: 16px;
+          line-height: 1.6;
+          color: #666666;
+          fontFamily: 'Inter', sans-serif;
+          margin-bottom: 32px;
+        }
+
+        .booking-card-list {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          margin-bottom: 40px;
+          padding-top: 32px;
+          border-top: 1px solid #EEEEEE;
+        }
+
+        .booking-card-list-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 12px;
+          font-size: 15px;
+          color: #444444;
+          fontFamily: 'Inter', sans-serif;
+          font-weight: 500;
+        }
+        
+        .booking-card-list-item .dot {
+          width: 6px;
+          height: 6px;
+          background: #111111;
+          border-radius: 50%;
+          margin-top: 8px;
+          flex-shrink: 0;
         }
 
         .submit-btn {
           width: 100%;
-          padding: 18px;
+          padding: 20px;
           background: #111111;
           color: #ffffff;
-          font-size: 15px;
+          font-size: 16px;
           font-weight: 600;
           fontFamily: 'Inter', sans-serif;
           border: none;
-          border-radius: 12px;
+          border-radius: 16px;
           cursor: pointer;
-          transition: transform 0.2s ease, background 0.2s ease;
-          margin-top: 8px;
+          transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          text-decoration: none;
         }
 
         .submit-btn:hover {
           background: #222222;
           transform: translateY(-2px);
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
         }
 
-        .contact-info-row {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 24px;
-          margin-top: 40px;
-          padding-top: 40px;
-          border-top: 1px solid #EEEEEE;
-        }
-
-        .info-item {
-          display: flex;
-          flex-direction: column;
-          gap: 4px;
-        }
-
-        .info-label {
-          font-size: 11px;
-          font-weight: 700;
-          color: #AAAAAA;
-          fontFamily: 'Inter', sans-serif;
-          text-transform: uppercase;
-          letter-spacing: 0.06em;
-        }
-
-        .info-value {
-          font-size: 14px;
-          font-weight: 600;
-          color: #111111;
-          fontFamily: 'Inter', sans-serif;
-        }
-
-        .final-cta {
-          margin-top: 100px;
+        .submit-btn-subtext {
           text-align: center;
-          padding: 60px 24px;
-          background: #FAFAFA;
-          border-radius: 32px;
-          max-width: 1000px;
-          margin-left: auto;
-          margin-right: auto;
+          font-size: 13px;
+          color: #888888;
+          fontFamily: 'Inter', sans-serif;
+          margin-top: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 16px;
+        }
+        
+        .submit-btn-subtext span {
+          display: flex;
+          align-items: center;
+          gap: 6px;
         }
 
         @media (max-width: 1024px) {
@@ -199,17 +183,12 @@ export default function Contact() {
           .contact-section {
             padding: 100px 20px 60px;
           }
-          .contact-form-wrapper {
-            padding: 32px 24px;
-          }
-          .contact-info-row {
-            grid-template-columns: 1fr;
-            gap: 20px;
-          }
-          .final-cta {
-            margin-top: 100px;
-            padding: 60px 24px;
+          .booking-card-wrapper {
+            padding: 40px 24px;
             border-radius: 24px;
+          }
+          .contact-left h3 {
+            font-size: 2.2rem;
           }
         }
       `}</style>
@@ -217,57 +196,6 @@ export default function Contact() {
       <section id="contact" className="contact-section">
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 1, background: '#EEEEEE' }} />
 
-        {/* Section Header */}
-        <div className="contact-header">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-10%" }}
-            transition={{ duration: 0.6 }}
-          >
-            <div style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 8,
-              marginBottom: 16,
-              fontSize: 11,
-              fontWeight: 600,
-              color: '#AAAAAA',
-              letterSpacing: '0.10em',
-              textTransform: 'uppercase',
-              fontFamily: 'Inter, sans-serif',
-            }}>
-              <div style={{ width: 20, height: 1, background: '#CCCCCC' }} />
-              CONTACT
-              <div style={{ width: 20, height: 1, background: '#CCCCCC' }} />
-            </div>
-            
-            <h2 style={{
-              fontSize: 'clamp(2rem, 5vw, 3.2rem)',
-              fontWeight: 800,
-              color: '#111111',
-              fontFamily: 'Inter, sans-serif',
-              letterSpacing: '-0.04em',
-              lineHeight: 1.1,
-              marginBottom: 14,
-            }}>
-              Let's Build Something<br />That Converts
-            </h2>
-            
-            <p style={{
-              fontSize: 16,
-              lineHeight: 1.65,
-              color: '#666666',
-              fontFamily: 'Inter, sans-serif',
-              maxWidth: 540,
-              margin: '0 auto',
-            }}>
-              Whether you're launching a new business or improving an existing website, we'd love to hear about your project.
-            </p>
-          </motion.div>
-        </div>
-
-        {/* Two Column Layout */}
         <div className="contact-grid">
           {/* Left Side */}
           <motion.div 
@@ -277,15 +205,22 @@ export default function Contact() {
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 0.6 }}
           >
-            <h3>Book Your Free Strategy Call</h3>
-            <p>Tell us about your business, goals, and challenges. We'll review your current website and suggest ways to increase conversions.</p>
+            <h3>
+              Your Last Agency Built A Website.<br />
+              <span style={{ color: '#666666' }}>Let's Build Something That Actually Converts.</span>
+            </h3>
+            <p>
+              If you've hired agencies before and didn't get results, you're not alone.
+              <br /><br />
+              We focus on conversion strategy, messaging, design, and development that helps businesses generate more leads and customers.
+            </p>
             
             <div className="trust-points">
-              {['Free Consultation', 'Conversion-Focused Advice', 'No Obligation', 'Fast Response'].map((point, i) => (
+              {['Free 15-Minute Strategy Call', 'Website & Conversion Audit', 'Actionable Recommendations'].map((point, i) => (
                 <div key={i} className="trust-point">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
-                    <circle cx="12" cy="12" r="10" fill="#111111" />
-                    <path d="M8 12.5L10.5 15L16 9" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
+                    <circle cx="12" cy="12" r="12" fill="#111111" />
+                    <path d="M8 12.5L10.5 15L16 9" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   {point}
                 </div>
@@ -293,115 +228,61 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          {/* Right Side (Form) */}
+          {/* Right Side (Booking Card) */}
           <motion.div 
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
           >
-            <div className="contact-form-wrapper">
-              <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
-                <div className="form-group">
-                  <label className="form-label">Full Name</label>
-                  <input type="text" className="form-input" placeholder="John Doe" />
-                </div>
-                
-                <div className="form-group">
-                  <label className="form-label">Email Address</label>
-                  <input type="email" className="form-input" placeholder="john@company.com" />
-                </div>
+            <div className="booking-card-wrapper">
+              <h4 className="booking-card-title">Free Website & Conversion Audit Call</h4>
+              <p className="booking-card-desc">We'll review your website and identify opportunities to improve conversions.</p>
 
-                <div className="form-group">
-                  <label className="form-label">Company Name</label>
-                  <input type="text" className="form-input" placeholder="Acme Corp" />
-                </div>
+              <div className="booking-card-list">
+                {[
+                  'Conversion bottlenecks',
+                  'Messaging issues',
+                  'UX improvements',
+                  'Revenue opportunities'
+                ].map((item, i) => (
+                  <div key={i} className="booking-card-list-item">
+                    <div className="dot" />
+                    {item}
+                  </div>
+                ))}
+              </div>
 
-                <div className="form-group">
-                  <label className="form-label">Project Details</label>
-                  <textarea className="form-input form-textarea" placeholder="Tell us about your goals..."></textarea>
-                </div>
-
-                <a 
-                  href="https://calendly.com/zouse/new-meeting" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="submit-btn" 
-                  style={{ display: 'block', textAlign: 'center', textDecoration: 'none' }}
-                >
-                  Book Free Strategy Call
-                </a>
-              </form>
-
-              <div className="contact-info-row">
-                <div className="info-item">
-                  <span className="info-label">Email</span>
-                  <span className="info-value">hello@zouse.in</span>
-                </div>
-                <div className="info-item">
-                  <span className="info-label">Location</span>
-                  <span className="info-value">India</span>
-                </div>
-                <div className="info-item">
-                  <span className="info-label">Response Time</span>
-                  <span className="info-value">Within 24 Hours</span>
-                </div>
+              <a 
+                href="https://calendly.com/zouse/new-meeting" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="submit-btn" 
+              >
+                Book Your Call
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
+              <div className="submit-btn-subtext">
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                  No obligations
+                </span>
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="8" x2="12" y2="12"/>
+                    <line x1="12" y1="16" x2="12.01" y2="16"/>
+                  </svg>
+                  No sales pressure
+                </span>
               </div>
             </div>
           </motion.div>
         </div>
-
-        {/* Final CTA */}
-        <motion.div 
-          className="final-cta"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-10%" }}
-          transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
-        >
-          <h2 style={{
-            fontSize: 'clamp(2rem, 4vw, 2.8rem)',
-            fontWeight: 800,
-            color: '#111111',
-            fontFamily: 'Inter, sans-serif',
-            letterSpacing: '-0.04em',
-            marginBottom: 24,
-          }}>
-            Ready To Turn More<br />Visitors Into Customers?
-          </h2>
-          <p style={{
-            fontSize: 16,
-            color: '#666666',
-            fontFamily: 'Inter, sans-serif',
-            marginBottom: 32,
-          }}>
-            Let's create a landing page that helps your business grow.
-          </p>
-          <a 
-            href="https://calendly.com/zouse/new-meeting"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: 'inline-block',
-              padding: '18px 32px',
-              background: '#111111',
-              color: '#ffffff',
-              fontSize: 16,
-              fontWeight: 600,
-              fontFamily: 'Inter, sans-serif',
-              textDecoration: 'none',
-              border: 'none',
-              borderRadius: 12,
-              cursor: 'pointer',
-              transition: 'transform 0.2s ease, background 0.2s ease',
-            }}
-            onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.background = '#222222' }}
-            onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.background = '#111111' }}
-          >
-            Book Free Strategy Call
-          </a>
-        </motion.div>
-
       </section>
     </>
   );
