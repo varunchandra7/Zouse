@@ -142,8 +142,18 @@ export default function TermsOfService({ onClose }) {
       <div className="legal-page">
         {/* Nav */}
         <div className="legal-nav">
-          <button className="legal-nav-logo" onClick={onClose} style={{ background: 'none', border: 'none' }}>
-            Zouse.
+          <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center' }}>
+            <img
+              src="/images/zouse..png"
+              alt="Zouse"
+              style={{
+                width: 160,
+                height: 44,
+                objectFit: 'cover',
+                objectPosition: 'center center',
+                display: 'block',
+              }}
+            />
           </button>
           <button className="legal-back-btn" onClick={onClose}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
