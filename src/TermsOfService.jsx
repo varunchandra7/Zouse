@@ -169,7 +169,7 @@ export default function TermsOfService({ onClose }) {
 
           <h2>1. About Us</h2>
           <p>
-            Zouse ("we", "us", "our") is a landing page and conversion design agency. These Terms govern your use of our website (zouse.co) and any services you purchase from us. For questions, contact us at <strong>hello@zouse.co</strong>.
+            Zouse ("we", "us", "our") is a landing page and conversion design agency. These Terms govern your use of our website (zouse.co) and any services you purchase from us. For questions, contact us at <strong>zouseagency@gmail.com</strong>.
           </p>
 
           <hr className="legal-divider" />
@@ -215,7 +215,7 @@ export default function TermsOfService({ onClose }) {
             <li>Final deliverables are released upon receipt of full payment</li>
           </ul>
           <p>
-            If you have a payment dispute, contact us at hello@zouse.co within 14 days of the issue arising.
+            If you have a payment dispute, contact us at zouseagency@gmail.com within 14 days of the issue arising.
           </p>
 
           <hr className="legal-divider" />
@@ -261,7 +261,7 @@ export default function TermsOfService({ onClose }) {
           <h2>11. Contact</h2>
           <p>
             For any questions about these Terms of Service, please contact us:<br />
-            <strong>Email:</strong> hello@zouse.co<br />
+            <strong>Email:</strong> zouseagency@gmail.com<br />
             <strong>Website:</strong> zouse.co
           </p>
         </div>

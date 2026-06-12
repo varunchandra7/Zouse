@@ -170,7 +170,7 @@ export default function PrivacyPolicy({ onClose }) {
 
           <h2>1. Who We Are</h2>
           <p>
-            Zouse is a landing page and conversion design agency. Our website is located at zouse.co. For any privacy-related queries, contact us at: <strong>hello@zouse.co</strong>
+            Zouse is a landing page and conversion design agency. Our website is located at zouse.co. For any privacy-related queries, contact us at: <strong>zouseagency@gmail.com</strong>
           </p>
 
           <hr className="legal-divider" />
@@ -255,7 +255,7 @@ export default function PrivacyPolicy({ onClose }) {
             <li><strong>Right to withdraw consent</strong> — where processing is based on consent</li>
           </ul>
           <p>
-            To exercise any of these rights, contact us at <strong>hello@zouse.co</strong>. We will respond within 30 days.
+            To exercise any of these rights, contact us at <strong>zouseagency@gmail.com</strong>. We will respond within 30 days.
           </p>
 
           <hr className="legal-divider" />
@@ -291,7 +291,7 @@ export default function PrivacyPolicy({ onClose }) {
           <h2>13. Contact Us</h2>
           <p>
             If you have any questions about this Privacy Policy, please contact us:<br />
-            <strong>Email:</strong> hello@zouse.co<br />
+            <strong>Email:</strong> zouseagency@gmail.com<br />
             <strong>Website:</strong> zouse.co
           </p>
         </div>
