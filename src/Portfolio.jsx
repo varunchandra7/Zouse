@@ -579,6 +579,25 @@ export default function Portfolio() {
                   </div>
 
                   {/* Results */}
+                  <div style={{ marginBottom: 8 }}>
+                    <span style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 5,
+                      fontSize: 9.5,
+                      fontWeight: 600,
+                      color: '#AAAAAA',
+                      fontFamily: 'Inter, sans-serif',
+                      letterSpacing: '0.06em',
+                      textTransform: 'uppercase',
+                      background: '#F6F6F6',
+                      border: '1px solid #EBEBEB',
+                      borderRadius: 20,
+                      padding: '3px 10px',
+                    }}>
+                      ⚠ Illustrative Results Only
+                    </span>
+                  </div>
                   <div style={{
                     display: 'grid',
                     gridTemplateColumns: 'repeat(3, 1fr)',

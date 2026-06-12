@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './index.css'
@@ -9,11 +9,16 @@ import Portfolio from './Portfolio'
 import Process from './Process'
 import Pricing from './Pricing'
 import Contact from './Contact'
+import Footer from './Footer'
+import PrivacyPolicy from './PrivacyPolicy'
+import TermsOfService from './TermsOfService'
 import { initLenis, destroyLenis } from './lenis'
 
 gsap.registerPlugin(ScrollTrigger)
 
 function App() {
+  const [activePage, setActivePage] = useState('home') // 'home' | 'privacy' | 'terms'
+
   useEffect(() => {
     const lenis = initLenis()
 
@@ -35,6 +40,19 @@ function App() {
     }
   }, [])
 
+  const goHome = () => {
+    setActivePage('home')
+    window.scrollTo(0, 0)
+  }
+
+  if (activePage === 'privacy') {
+    return <PrivacyPolicy onClose={goHome} />
+  }
+
+  if (activePage === 'terms') {
+    return <TermsOfService onClose={goHome} />
+  }
+
   return (
     <main>
       <Hero />
@@ -44,6 +62,10 @@ function App() {
       <Process />
       <Pricing />
       <Contact />
+      <Footer
+        onPrivacyClick={() => setActivePage('privacy')}
+        onTermsClick={() => setActivePage('terms')}
+      />
     </main>
   )
 }

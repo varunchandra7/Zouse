@@ -358,7 +358,7 @@ function BrowserMockup() {
               marginBottom: 14,
             }}
           >
-            Case Study — SaaS Platform
+            Concept Design — SaaS Landing Page
           </div>
           <h2
             style={{
@@ -371,18 +371,18 @@ function BrowserMockup() {
               marginBottom: 10,
             }}
           >
-            From 2% to 11%<br />Conversion Rate
+            Conversion-Focused<br />Landing Page Redesign
           </h2>
           <p style={{ fontSize: 11, color: '#888', fontFamily: 'Inter, sans-serif', lineHeight: 1.6, maxWidth: 340, marginBottom: 20 }}>
-            A full landing page redesign that tripled signups in 30 days — without changing the product.
+            A full landing page redesign built around clear messaging, strategic CTAs, and a conversion-focused visual system.
           </p>
 
-          {/* Stats row */}
+          {/* Feature highlights */}
           <div style={{ display: 'flex', gap: 12, marginBottom: 24 }}>
             {[
-              { val: '+450%', label: 'Signups' },
-              { val: '11.2%', label: 'Conv. Rate' },
-              { val: '30d', label: 'Delivery' },
+              { val: 'UX', label: 'Strategy' },
+              { val: 'Copy', label: 'Messaging' },
+              { val: 'CRO', label: 'Optimization' },
             ].map((s) => (
               <div
                 key={s.label}
